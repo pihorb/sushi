@@ -1,0 +1,25 @@
+@import "../../sass/mixins.sass"
+
+.m-header
+  @include flex(center, center, column)
+  height: 50rem
+  &__title
+    font-size: 5rem
+    text-transform: uppercase
+    margin: $margin 0
+    font-weight: bold
+.m-divider
+  &__content  
+    @include flex(center, center, row)
+    background: #131313
+  &__list
+    @include flex(center, center, row)
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 1.8rem
+  [data-icon="star"]
+    margin: 0 2rem
+    font-size: 1.2rem
+    path
+      fill: red
+

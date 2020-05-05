@@ -1,0 +1,75 @@
+@import '../../sass/mixins.sass'
+
+.item-1
+  background: url("../../images/links/rolls.jpg") no-repeat
+.item-2
+  background: url("../../images/links/sets.jpg") no-repeat
+.item-3
+  background: url("../../images/links/promotion.jpg") no-repeat
+.item-4
+  background: url("../../images/links/nigiri.jpg") no-repeat
+.item-5
+  background: url("../../images/links/drinks.jpg") no-repeat
+.item-6
+  background: url("../../images/links/extras.jpg") no-repeat
+
+.menu-nav
+  width: 100%
+  max-width: 150rem
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  z-index: 3
+  top: 5.8rem
+  background-color: #262626
+  border-top: 1px solid red
+  padding-bottom: 7rem
+  @include responsive("tablet-portrait-pro")
+    position: relative
+    background-color: transparent
+    border-top: 0
+    top: 0
+    width: auto
+    max-width: none
+    left: auto
+    transform: inherit
+  &__list
+    display: flex
+    justify-content: space-around
+    padding: 0
+  &__link
+    width: 20rem
+    height: 20rem
+    background-position: center
+    background-size: cover
+    border-radius: 1.5rem
+    margin: $margin 0
+    @include responsive("tablet-landscape")
+      width: 15rem
+      height: 15rem
+    @include responsive("tablet-portrait-pro")
+      margin: 1rem 
+      margin-right: 8rem
+      width: 20rem
+      height: 20rem
+    @include responsive("tablet-portrait")
+      margin-right: 6rem
+    @include responsive("mobile-portrait")
+      width: 30rem
+      height: 30rem
+      margin-right: 10rem
+  
+  &__item
+    font-size: 1.8rem
+    font-weight: bold
+    position: relative
+    top: 22.5rem
+    text-align: center
+    text-transform: uppercase
+    @include responsive("tablet-landscape")
+      top: 21.5rem
+      font-size: 1.6rem
+    @include responsive("mobile-portrait")
+      top: 32.5rem
+
+  

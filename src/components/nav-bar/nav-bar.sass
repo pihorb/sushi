@@ -1,0 +1,75 @@
+@import '../../sass/mixins.sass'
+
+.nav
+  @include flex(space-between, center, row)
+  background: #131313
+  &__container 
+    @include flex(space-between, center, row)
+    width: 100%;
+  &__list
+    @include flex(space-between, center, row)
+    align-self: flex-end
+    width: 30%
+    z-index: 1
+    margin: 0 2rem
+    @include responsive("tablet-portrait-pro")
+      display: none
+  &__link
+    font-weight: bold
+    font-size: 1.6rem
+    padding: .5rem $padding
+  &__img
+    width: 4rem
+    height: 4rem
+    margin: 0 $margin
+  &__item
+    padding: 2rem 0
+
+.open
+  @include responsive("tablet-portrait-pro")
+    @include flex(center, center, column)
+    position: absolute
+    margin: 0
+    width: 100%
+    top: 7rem
+    background: #343639
+    padding: 0
+    .nav__item
+      @include flex(center, flex-start, column)
+      width: 90%
+      padding: .5rem 0
+      border-bottom: 1px solid grey 
+      &:last-child
+        border-bottom: none
+    .menu-link
+      position: relative
+      overflow: hidden
+
+  
+.not-on-top
+  position: sticky
+  background: rgba(0, 0, 0, 0.5)
+  z-index: 1
+  top: 0px
+  transition: all .5s
+  .nav__container 
+    background: rgba(0, 0, 0, 0.5)
+    animation-name: move
+    animation-duration: .5s
+    @include responsive("tablet-portrait-pro")
+      background: #343639
+  
+.menu-img
+  display: none
+  @include responsive("tablet-portrait-pro")
+    display: flex
+    padding: $margin 0
+
+@keyframes move
+  0%    
+    position: relative 
+    bottom: -15px
+  100%  
+    position: relative 
+    bottom: 0
+    

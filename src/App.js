@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, lazy, Suspense } from 'react'
+import Nav from './components/nav-bar/nav-bar'
+import Footer from './components/footer/footer'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import AOS from 'aos'
+
+const Home = lazy(() => import('./pages/home/home'))
+const Menu = lazy(() => import('./pages/menu/menu'))
+const Delivery = lazy(() => import('./pages/delivery/delivery'))
+const Contacts = lazy(() => './pages/contacts/contacts')
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      offset: 0,
+      duration: 1000,
+      once: true,
+    })
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <Router>
+        <Nav />
+        <Suspense fallback={<div>asdfasdf</div>}>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/menu/:id' component={Menu} />
+            <Route path='/delivery' component={Delivery} />
+            <Route path='/contacts' component={Contacts} />
+          </Switch>
+        </Suspense>
+        <Footer />
+      </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

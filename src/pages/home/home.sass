@@ -1,0 +1,100 @@
+@import "../../sass/mixins.sass"
+
+.l-block1
+  @include flex(center, center, row)
+  background: url("../../images/landing/new_landing.jpg") no-repeat center fixed
+  background-size: cover
+  height: 79rem
+  opacity: 0.9
+  &__content
+    @include flex(center, center, column)
+    padding: 3rem $margin
+    max-width: 50rem
+    font-weight: bold
+    font-size: 2.5rem
+    @include responsive("tablet-landscape")
+      font-size: 2rem
+  &__description
+    text-transform: uppercase
+    background: rgba(0, 0, 0, 0.5)
+  &__sub-description
+    text-transform: uppercase
+    background: rgba(0, 0, 0, 0.5)
+    display: none
+  &__logo
+    margin: $margin 0
+  &__img
+    height: 20rem
+
+.l-block2
+  @include flex(center, center, row)
+  padding: 10rem 0
+  background: url("../../images/landing/landing2.jpg") no-repeat center center fixed
+  background-size: cover
+  @include responsive("tablet-landscape")
+    flex-direction: column
+  &__content
+    @include flex(center, center, column)
+    position: relative
+    background: rgba(0, 0, 0, 0.5)
+    padding: 0 $margin
+    margin: 2rem 3rem
+    height: 47rem
+  &__img
+    margin: 0 3em
+  &__description
+    font-weight: bold
+    margin-bottom: 4rem
+    font-size: 1.8rem
+    @include responsive("tablet-landscape")
+      font-size: $margin
+    &::after,
+    &::before
+      content: ""
+      border-bottom: .2rem solid white
+      min-width: 5rem
+      min-height: $padding
+      padding: 0 3.5rem
+      margin: 2rem
+      position: relative
+      bottom: .9rem
+      @include responsive("tablet-landscape")
+        padding: 0 2rem
+
+  &__title
+    font-size: 3.5rem
+    margin-bottom: .7rem
+    font-weight: bold
+  &__info
+    text-align: center
+    line-height: 2
+    font-weight: bold
+    font-size: 1.6rem
+
+.l-block3
+  @include flex(center, center, row)
+  background: url("../../images/landing/landing3.jpg") 100% 100% no-repeat
+  width: 100%
+  background-size: cover
+  &__content
+    @include flex(center, center, row)
+    flex-wrap: wrap
+    padding: 7rem 0
+    max-width: 1300px
+
+
+.l-block4
+  @include flex(space-around, center, row)
+  background: url("../../images/landing/landing2.jpg") no-repeat center center fixed
+  background-size: cover
+  padding: 10rem 0
+  &__content
+    @include flex(center, center, row)
+    flex-wrap: wrap
+  
+.block4-info
+  height: 40%
+
+  
+
+

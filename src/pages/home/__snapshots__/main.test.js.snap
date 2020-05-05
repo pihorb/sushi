@@ -1,0 +1,372 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div
+  className="landing"
+>
+  <div
+    className="l-block1"
+  >
+    <div
+      className="l-block1__content"
+    >
+      <div
+        className="l-block1__description"
+      >
+        Онлайн замовлення
+      </div>
+      <div
+        className="l-block1__sub-description"
+      >
+        Графік роботи: 11:00 - 23:00
+      </div>
+      <div
+        className="l-block1__logo"
+      >
+        <img
+          alt="logo"
+          className="l-block1__img"
+          src="logo-min.png"
+        />
+      </div>
+      <div
+        className="l-block1__description"
+      >
+        Ми створюємо смачні спогади
+      </div>
+      <div
+        className="l-block1__sub-description"
+      >
+        Щоденні акції та знижки
+      </div>
+    </div>
+  </div>
+  <div
+    className="l-block2"
+  >
+    <div
+      className="l-block2__content"
+      data-aos="slide-right"
+    >
+      <div
+        className="l-block2__title"
+      >
+        HOKKAIDO
+      </div>
+      <span
+        className="l-block2__description"
+      >
+        Доставка Суші Львів
+      </span>
+      <p
+        className="l-block2__info"
+      >
+        У нас працює швидкісна доставка суші, 
+        <br />
+        яку ви зможете замовити за номерами телефону: 
+        <br />
+        +38 (063) 614 0440 
+        <br />
+        +38 (096) 614 0440 
+        <br />
+        Графік роботи: 
+        <br />
+        з 11:00 до 23:00 
+        <br />
+      </p>
+    </div>
+    <div
+      className="l-block2__img"
+      data-aos="slide-up"
+    >
+      <img
+        alt="sushi"
+        src="random-sushi.jpg"
+      />
+    </div>
+  </div>
+  <div
+    className="l-block3"
+  >
+    <div
+      className="l-block3__content"
+    >
+      <div
+        className="link-container"
+        data-aos="slide-up"
+        data-testid="link-container"
+        style={
+          Object {
+            "background": "url(rolls.jpg) no-repeat",
+            "backgroundSize": "cover",
+          }
+        }
+      >
+        <div
+          className="link-container__info"
+          data-testid="container-info"
+        >
+          <a
+            className="link-container__title"
+            data-testid="link"
+            href="/menu/rolls"
+            onClick={[Function]}
+          >
+            Роли
+          </a>
+        </div>
+      </div>
+      <div
+        className="link-container"
+        data-aos="slide-up"
+        data-testid="link-container"
+        style={
+          Object {
+            "background": "url(sets.jpg) no-repeat",
+            "backgroundSize": "cover",
+          }
+        }
+      >
+        <div
+          className="link-container__info"
+          data-testid="container-info"
+        >
+          <a
+            className="link-container__title"
+            data-testid="link"
+            href="/menu/sets"
+            onClick={[Function]}
+          >
+            Сети
+          </a>
+        </div>
+      </div>
+      <div
+        className="link-container"
+        data-aos="slide-up"
+        data-testid="link-container"
+        style={
+          Object {
+            "background": "url(promotion.jpg) no-repeat",
+            "backgroundSize": "cover",
+          }
+        }
+      >
+        <div
+          className="link-container__info"
+          data-testid="container-info"
+        >
+          <a
+            className="link-container__title"
+            data-testid="link"
+            href="/menu/oberayte-5-roliv-platit-za-4"
+            onClick={[Function]}
+          >
+            Акція
+          </a>
+        </div>
+      </div>
+      <div
+        className="link-container"
+        data-aos="slide-up"
+        data-testid="link-container"
+        style={
+          Object {
+            "background": "url(nigiri.jpg) no-repeat",
+            "backgroundSize": "cover",
+          }
+        }
+      >
+        <div
+          className="link-container__info"
+          data-testid="container-info"
+        >
+          <a
+            className="link-container__title"
+            data-testid="link"
+            href="/menu/hunkans"
+            onClick={[Function]}
+          >
+            Нігірі
+          </a>
+        </div>
+      </div>
+      <div
+        className="link-container"
+        data-aos="slide-up"
+        data-testid="link-container"
+        style={
+          Object {
+            "background": "url(drinks.jpg) no-repeat",
+            "backgroundSize": "cover",
+          }
+        }
+      >
+        <div
+          className="link-container__info"
+          data-testid="container-info"
+        >
+          <a
+            className="link-container__title"
+            data-testid="link"
+            href="/menu/drinks"
+            onClick={[Function]}
+          >
+            Напої
+          </a>
+        </div>
+      </div>
+      <div
+        className="link-container"
+        data-aos="slide-up"
+        data-testid="link-container"
+        style={
+          Object {
+            "background": "url(extras.jpg) no-repeat",
+            "backgroundSize": "cover",
+          }
+        }
+      >
+        <div
+          className="link-container__info"
+          data-testid="container-info"
+        >
+          <a
+            className="link-container__title"
+            data-testid="link"
+            href="/menu/other"
+            onClick={[Function]}
+          >
+            Додатки
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="l-block4"
+  >
+    <div
+      className="l-block4__content"
+    >
+      <div
+        className="link-container"
+        data-aos="slide-right"
+        data-testid="link-container"
+        style={
+          Object {
+            "background": "url(promotion1.jpg) no-repeat",
+            "backgroundSize": "cover",
+          }
+        }
+      >
+        <div
+          className="link-container__info extra-height"
+          data-testid="container-info"
+        >
+          <a
+            className="link-container__title"
+            data-testid="link"
+            href="/news/dostavka-sushi-dlya-vashogo-zadovolennya"
+            onClick={[Function]}
+          >
+            Доставка суші для вашого задоволення
+          </a>
+          <p
+            className="link-container__subtitle"
+          >
+            Доставка суші для вашого задоволення. Доставка суші Львів – це швидка поставка смачних японських..
+          </p>
+          <div
+            className="link-container__desc"
+          >
+            2019-10-29 17:42:32
+          </div>
+        </div>
+      </div>
+      <div
+        className="link-container"
+        data-aos="slide-right"
+        data-testid="link-container"
+        style={
+          Object {
+            "background": "url(promotion2.jpg) no-repeat",
+            "backgroundSize": "cover",
+          }
+        }
+      >
+        <div
+          className="link-container__info extra-height"
+          data-testid="container-info"
+        >
+          <a
+            className="link-container__title"
+            data-testid="link"
+            href="/news/shvidka-ta-yakisna-dostavka-sushi-abo-garniy-chas-provedeniy-zi-smakom"
+            onClick={[Function]}
+          >
+            Швидка та якісна доставка суші або гарний час, проведений зі смаком
+          </a>
+          <p
+            className="link-container__subtitle"
+          >
+            Наш онлайн ресторан Hokkaido пропонує своїм клієнтам замовити оригінальні суші у Львові за телефонами, які...
+          </p>
+          <div
+            className="link-container__desc"
+          >
+            2019-10-18 18:12:02
+          </div>
+        </div>
+      </div>
+      <div
+        className="link-container"
+        data-aos="slide-right"
+        data-testid="link-container"
+        style={
+          Object {
+            "background": "url(promotion3.jpg) no-repeat",
+            "backgroundSize": "cover",
+          }
+        }
+      >
+        <div
+          className="link-container__info extra-height"
+          data-testid="container-info"
+        >
+          <a
+            className="link-container__title"
+            data-testid="link"
+            href="/news/hokkaido-–-sushi-yaki-stvoryuyut-smachni-spogadi"
+            onClick={[Function]}
+          >
+            HOKKAIDO – суші, які створюють смачні спогади
+          </a>
+          <p
+            className="link-container__subtitle"
+          >
+            Шановні гості нашого сайту, доставка HOKKAIDO Львів ніколи вас не підведе. Ми пропонуємо смачні, корисні страви...
+          </p>
+          <div
+            className="link-container__desc"
+          >
+            2019-09-19 20:10:32
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="l-block5"
+  >
+    <img
+      alt="logo"
+      className="l-block5__img"
+      src="logo-min.png"
+    />
+    <p>
+      2020 ВСІ ПРАВА ЗАХИЩЕНО. РОЗРОБКА ТА ДИЗАЙН WEST-INFO.
+    </p>
+  </footer>
+</div>
+`;

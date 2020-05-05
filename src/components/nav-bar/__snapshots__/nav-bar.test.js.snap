@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div
+  className="nav"
+  data-testid="navbar"
+>
+  <img
+    alt="logo"
+    className="nav__img"
+    src="logo-min.png"
+  />
+  <ul
+    className="nav__list"
+    data-testid="list"
+  >
+    <li
+      className="nav__item"
+      data-testid="home-link"
+      onClick={[Function]}
+    >
+      <a
+        className="nav__link"
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+    </li>
+    <li
+      className="nav__item"
+      data-testid="menu-link"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <a
+        className="nav__link"
+        href="/"
+        onClick={[Function]}
+      >
+        Menu
+      </a>
+    </li>
+    <li
+      className="nav__item"
+      data-testid="delivery-link"
+      onClick={[Function]}
+    >
+      <a
+        className="nav__link"
+        href="/delivery"
+        onClick={[Function]}
+      >
+        Delivery
+      </a>
+    </li>
+    <li
+      className="nav__item"
+      data-testid="contacts-link"
+      onClick={[Function]}
+    >
+      <a
+        className="nav__link"
+        href="/contacts"
+        onClick={[Function]}
+      >
+        Contacts
+      </a>
+    </li>
+  </ul>
+  <img
+    alt="logo"
+    className="nav__img menu-img"
+    data-testid="toggle-img"
+    onClick={[Function]}
+    src="hamburger.png"
+  />
+</div>
+`;

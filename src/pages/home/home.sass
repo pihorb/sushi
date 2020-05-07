@@ -1,9 +1,13 @@
 @import "../../sass/mixins.sass"
 
+.block-bg
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+
 .l-block1
   @include flex(center, center, row)
-  background: url("../../images/landing/new_landing.jpg") no-repeat center fixed
-  background-size: cover
+  background-attachment: fixed
   height: 79rem
   opacity: 0.9
   &__content
@@ -29,8 +33,7 @@
 .l-block2
   @include flex(center, center, row)
   padding: 10rem 0
-  background: url("../../images/landing/landing2.jpg") no-repeat center center fixed
-  background-size: cover
+  background-attachment: fixed
   @include responsive("tablet-landscape")
     flex-direction: column
   &__content
@@ -73,9 +76,7 @@
 
 .l-block3
   @include flex(center, center, row)
-  background: url("../../images/landing/landing3.jpg") 100% 100% no-repeat
   width: 100%
-  background-size: cover
   &__content
     @include flex(center, center, row)
     flex-wrap: wrap
@@ -85,8 +86,7 @@
 
 .l-block4
   @include flex(space-around, center, row)
-  background: url("../../images/landing/landing2.jpg") no-repeat center center fixed
-  background-size: cover
+  background-attachment: fixed
   padding: 10rem 0
   &__content
     @include flex(center, center, row)

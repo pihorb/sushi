@@ -4,35 +4,13 @@ import 'aos/dist/aos.css'
 import './home.sass'
 import logo from '../../images/icons/logo-min.png'
 import sushi_img from '../../images/random-sushi.jpg'
-import LinkBox from '../../components/link-box/link-box'
+import HomeMenuLinks from '../../components/home-menu-links/home-menu-links'
+import HomePromotionLinks from '../../components/home-promotion-links/home-promotion-links'
+import { lazy } from '../../helpers'
 
 function Home() {
-  
-  // const preloadImage = (img) => {
-  //   console.log(img.classList)
-  //   if (!img) return
-  //   img.classList.add(`${img.classList[0]}-bg`)
-  // }
   const repeatedAnimation = () => {
-    // let images = document.querySelectorAll('[bg-img]')
-    // let config = {
-    //   root: null,
-    //   rootMargin: '300px',
-    //   threshold: 0,
-    // }
-    // let observer = new IntersectionObserver((entries, imgObserver) => {
-    //   entries.forEach((entry) => {
-    //     console.log(entry)
-    //     if (!entry.isIntersecting) return
-    //     preloadImage(entry.target)
-    //     imgObserver.unobserve(entry.target)
-    //   })
-    // }, config)
-
-    // images.forEach((image) => {
-    //   observer.observe(image)
-    // })
-
+    lazy('../../images/landing')
     const tl = new TimelineLite()
 
     tl.to('.l-block1__description', 1, {
@@ -54,19 +32,11 @@ function Home() {
       .repeat(-1)
   }
 
-  useEffect(() => {
-    repeatedAnimation()
-  })
-
-  // const bgImage = (name) => {
-  //   const img = require(`../../images/landing/${name}.jpg`)
-  //   return `url(${img}) no-repeat center fixed`
-  // }
+  useEffect(() => repeatedAnimation(), [])
 
   return (
     <div className='landing'>
-      
-      <div className='l-block1' bg-img='true'>
+      <div className='l-block1 block-bg' data-bg='landing/new_landing.jpg'>
         <div className='l-block1__content'>
           <div className='l-block1__description'>Онлайн замовлення</div>
           <div className='l-block1__sub-description'>
@@ -84,7 +54,7 @@ function Home() {
         </div>
       </div>
 
-      <div className='l-block2' bg-img='true'>
+      <div className='l-block2 block-bg' data-bg='landing/landing2.jpg'>
         <div className='l-block2__content' data-aos='slide-right'>
           <div className='l-block2__title'>HOKKAIDO</div>
           <span className='l-block2__description'>Доставка Суші Львів</span>
@@ -102,68 +72,15 @@ function Home() {
         </div>
       </div>
 
-      <div className='l-block3' bg-img='true'>
+      <div className='l-block3 block-bg' data-bg='landing/landing3.jpg'>
         <div className='l-block3__content'>
-          <LinkBox
-            name='rolls'
-            aos='slide-up'
-            link='/menu/rolls'
-            title='Роли'
-          />
-          <LinkBox name='sets' aos='slide-up' link='/menu/sets' title='Сети' />
-          <LinkBox
-            name='promotion'
-            aos='slide-up'
-            link='/menu/oberayte-5-roliv-platit-za-4'
-            title='Акція'
-          />
-          <LinkBox
-            name='nigiri'
-            aos='slide-up'
-            link='/menu/hunkans'
-            title='Нігірі'
-          />
-          <LinkBox
-            name='drinks'
-            aos='slide-up'
-            link='/menu/drinks'
-            title='Напої'
-          />
-          <LinkBox
-            name='extras'
-            aos='slide-up'
-            link='/menu/other'
-            title='Додатки'
-          />
+          <HomeMenuLinks />
         </div>
       </div>
 
-      <div className='l-block4' bg-img='true'>
+      <div className='l-block4 block-bg' data-bg='landing/landing2.jpg'>
         <div className='l-block4__content'>
-          <LinkBox
-            name='promotion1'
-            aos='slide-right'
-            link='news/dostavka-sushi-dlya-vashogo-zadovolennya'
-            title='Доставка суші для вашого задоволення'
-            subtitle='Доставка суші для вашого задоволення. Доставка суші Львів – це швидка поставка смачних японських..'
-            desc='2019-10-29 17:42:32'
-          />
-          <LinkBox
-            name='promotion2'
-            aos='slide-right'
-            link='news/shvidka-ta-yakisna-dostavka-sushi-abo-garniy-chas-provedeniy-zi-smakom'
-            title='Швидка та якісна доставка суші або гарний час, проведений зі смаком'
-            subtitle='Наш онлайн ресторан Hokkaido пропонує своїм клієнтам замовити оригінальні суші у Львові за телефонами, які...'
-            desc='2019-10-18 18:12:02'
-          />
-          <LinkBox
-            name='promotion3'
-            aos='slide-right'
-            link='news/hokkaido-–-sushi-yaki-stvoryuyut-smachni-spogadi'
-            title='HOKKAIDO – суші, які створюють смачні спогади'
-            subtitle='Шановні гості нашого сайту, доставка HOKKAIDO Львів ніколи вас не підведе. Ми пропонуємо смачні, корисні страви...'
-            desc='2019-09-19 20:10:32'
-          />
+          <HomePromotionLinks />
         </div>
       </div>
     </div>

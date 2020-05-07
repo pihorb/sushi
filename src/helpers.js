@@ -1,30 +1,34 @@
+export class Lazy {
+  constructor() {
+    this.images = document.querySelectorAll('[data-bg]')
+    this.config = {
+      root: null,
+      rootMargin: '300px',
+      threshold: 0,
+    }
+  }
 
-export function lazy() {
-  const preloadImage = (img) => {
-    if (!img) return
-    const background = img.getAttribute('data-bg')
+  preloadImage(image) {
+    if (!image) return false
+    const background = image.getAttribute('data-bg')
     const root = require(`./images/${background}`)
-    img.style.backgroundImage = `url(${root})`
+    image.style.backgroundImage = `url(${root})`
   }
 
-  const images = document.querySelectorAll('[data-bg]')
-
-  const config = {
-    root: null,
-    rootMargin: '300px',
-    threshold: 0,
+  observe() {
+    this.observer = new IntersectionObserver((entries, imgObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+        this.preloadImage(entry.target)
+        imgObserver.unobserve(entry.target)
+      })
+    }, this.config)
   }
 
-  const observer = new IntersectionObserver((entries, imgObserver) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return
-      preloadImage(entry.target)
-      imgObserver.unobserve(entry.target)
+  init() {
+    this.observe()
+    return this.images.forEach((image) => {
+      this.observer.observe(image)
     })
-  }, config)
-
-  images.forEach((image) => {
-    observer.observe(image)
-  })
+  }
 }
-

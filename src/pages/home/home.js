@@ -6,11 +6,12 @@ import logo from '../../images/icons/logo-min.png'
 import sushi_img from '../../images/random-sushi.jpg'
 import HomeMenuLinks from '../../components/home-menu-links/home-menu-links'
 import HomePromotionLinks from '../../components/home-promotion-links/home-promotion-links'
-import { lazy } from '../../helpers'
+import { Lazy } from '../../helpers'
 
 function Home() {
   const repeatedAnimation = () => {
-    lazy('../../images/landing')
+    new Lazy().init('../../images/landing')
+    
     const tl = new TimelineLite()
 
     tl.to('.l-block1__description', 1, {

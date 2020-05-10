@@ -1,18 +1,25 @@
 export class Lazy {
   constructor() {
-    this.images = document.querySelectorAll('[data-bg]')
+    this.backgrounds = document.querySelectorAll('[data-bg], [data-image]')
     this.config = {
       root: null,
-      rootMargin: '300px',
+      rootMargin: '400px',
       threshold: 0,
     }
   }
 
-  preloadImage(image) {
-    if (!image) return false
-    const background = image.getAttribute('data-bg')
-    const root = require(`./images/${background}`)
-    image.style.backgroundImage = `url(${root})`
+  preloadImage(node) {
+    if (!node) return false
+    const background = node.getAttribute('data-bg')
+    const img = node.getAttribute('data-image')
+    const root = require(`./images/${img ? img : background}`)
+    const $img = new Image()
+    $img.src = root
+    $img.onload = () => {
+      return background
+        ? (node.style.backgroundImage = `url(${$img.src})`)
+        : (node.src = $img.src)
+    }
   }
 
   observe() {
@@ -25,10 +32,14 @@ export class Lazy {
     }, this.config)
   }
 
+  strartObseving() {
+    this.backgrounds.forEach((bg) => {
+      this.observer.observe(bg)
+    })
+  }
+
   init() {
     this.observe()
-    return this.images.forEach((image) => {
-      this.observer.observe(image)
-    })
+    this.strartObseving()
   }
 }

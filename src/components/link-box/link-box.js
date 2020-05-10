@@ -4,12 +4,6 @@ import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
 function LinkBox(props) {
-  const img =  props.name ? require(`../../images/links/${props.name}.jpg`) : ''
-
-  const bgImg = {
-    background: img ? `url(${img}) no-repeat` : 'rgba(0, 0, 0, 0.5)',
-    backgroundSize: 'cover',
-  }
 
   const container = classNames({
     'link-container__info': true,
@@ -22,7 +16,7 @@ function LinkBox(props) {
       data-testid='link-container'
       data-aos={props.aos}
       bg-img='true'
-      style={bgImg}
+      data-bg={ props.name ? `links/${props.name}.jpg` : 'rgba(0, 0, 0, 0.5)'}
     >
       <div className={container} data-testid='container-info'>
         <Link

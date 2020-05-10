@@ -1,39 +1,44 @@
-import React, { useEffect } from 'react'
-import { TimelineLite, Power2 } from 'gsap'
+import React, { useEffect, useState } from 'react'
 import 'aos/dist/aos.css'
 import './home.sass'
 import logo from '../../images/icons/logo-min.png'
-import sushi_img from '../../images/random-sushi.jpg'
 import HomeMenuLinks from '../../components/home-menu-links/home-menu-links'
 import HomePromotionLinks from '../../components/home-promotion-links/home-promotion-links'
 import { Lazy } from '../../helpers'
 
 function Home() {
-  const repeatedAnimation = () => {
-    new Lazy().init('../../images/landing')
-    
-    const tl = new TimelineLite()
+  const [animate, setAnimate] = useState(true)
 
-    tl.to('.l-block1__description', 1, {
-      autoAlpha: 0,
-      display: 'none',
-      ease: Power2.easeInOut,
-      delay: 5,
-    })
-      .to('.l-block1__sub-description', 1, {
-        autoAlpha: 1,
-        display: 'flex',
-        ease: Power2.easeInOut,
-      })
-      .to('.l-block1__sub-description', 1, {
-        autoAlpha: 0,
-        ease: Power2.easeInOut,
-        delay: 3,
-      })
-      .repeat(-1)
+  const lazyImages = () => {
+    new Lazy().init()
   }
 
-  useEffect(() => repeatedAnimation(), [])
+  const repeatedAnimation = () => {
+    const desc = document.getElementsByClassName('l-block1__description')
+    const sub = document.getElementsByClassName('l-block1__sub-description')
+    if (animate) {
+      sub[0].classList.add('show')
+      desc[0].classList.add('show')
+      sub[1].classList.remove('show')
+      desc[1].classList.remove('show')
+    } else {
+      sub[1].classList.add('show')
+      desc[1].classList.add('show')
+      sub[0].classList.remove('show')
+      desc[0].classList.remove('show')
+    }
+    setAnimate(!animate)
+    console.log(animate)
+  }
+
+  useEffect(() => {
+    let interval = setTimeout(() => repeatedAnimation(), 3000)
+    return () => clearInterval(interval)
+  }, [animate])
+
+  useEffect(() => {
+    lazyImages()
+  }, [])
 
   return (
     <div className='landing'>
@@ -46,11 +51,9 @@ function Home() {
           <div className='l-block1__logo'>
             <img className='l-block1__img' src={logo} alt='logo' />
           </div>
-          <div className='l-block1__description'>
-            Ми створюємо смачні спогади
-          </div>
+          <div className='l-block1__description'>Щоденні акції та знижки</div>
           <div className='l-block1__sub-description'>
-            Щоденні акції та знижки
+            Ми створюємо смачні спогади
           </div>
         </div>
       </div>
@@ -69,7 +72,7 @@ function Home() {
           </p>
         </div>
         <div className='l-block2__img' data-aos='slide-up'>
-          <img src={sushi_img} alt='sushi' />
+          <img data-image='landing/random-sushi.jpg' alt='sushi' />
         </div>
       </div>
 

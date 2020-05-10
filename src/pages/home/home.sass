@@ -4,7 +4,6 @@
   background-size: cover
   background-repeat: no-repeat
   background-position: center
-
 .l-block1
   @include flex(center, center, row)
   background-attachment: fixed
@@ -13,23 +12,32 @@
   &__content
     @include flex(center, center, column)
     padding: 3rem $margin
+    position: relative
+    height: 30rem
+    width: 50rem
     max-width: 50rem
     font-weight: bold
     font-size: 2.5rem
     @include responsive("tablet-landscape")
       font-size: 2rem
-  &__description
-    text-transform: uppercase
-    background: rgba(0, 0, 0, 0.5)
+  &__description,
   &__sub-description
-    text-transform: uppercase
+    position: absolute
     background: rgba(0, 0, 0, 0.5)
-    display: none
+    text-transform: uppercase
+    opacity: 0
+  &__description
+    top: 0
+  &__sub-description
+    bottom: 0
   &__logo
     margin: $margin 0
   &__img
     height: 20rem
-
+  .show
+    opacity: 1
+    transition: all 2s
+ 
 .l-block2
   @include flex(center, center, row)
   padding: 10rem 0

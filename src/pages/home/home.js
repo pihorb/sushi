@@ -7,32 +7,29 @@ import HomePromotionLinks from '../../components/home-promotion-links/home-promo
 import { Lazy } from '../../helpers'
 
 function Home() {
-  const [animate, setAnimate] = useState(true)
+  const [animate, setAnimate] = useState(false)
 
   const lazyImages = () => {
     new Lazy().init()
   }
 
-  const repeatedAnimation = () => {
-    const desc = document.getElementsByClassName('l-block1__description')
-    const sub = document.getElementsByClassName('l-block1__sub-description')
-    if (animate) {
-      sub[0].classList.add('show')
-      desc[0].classList.add('show')
-      sub[1].classList.remove('show')
-      desc[1].classList.remove('show')
-    } else {
-      sub[1].classList.add('show')
-      desc[1].classList.add('show')
-      sub[0].classList.remove('show')
-      desc[0].classList.remove('show')
-    }
-    setAnimate(!animate)
-    console.log(animate)
-  }
-
   useEffect(() => {
-    let interval = setTimeout(() => repeatedAnimation(), 3000)
+    let interval = setTimeout(() => {
+      const desc = document.getElementsByClassName('l-block1__description')
+      const sub = document.getElementsByClassName('l-block1__sub-description')
+      if (animate) {
+        sub[0].classList.add('show')
+        desc[0].classList.add('show')
+        sub[1].classList.remove('show')
+        desc[1].classList.remove('show')
+      } else {
+        sub[1].classList.add('show')
+        desc[1].classList.add('show')
+        sub[0].classList.remove('show')
+        desc[0].classList.remove('show')
+      }
+      setAnimate(!animate)
+    }, 4000)
     return () => clearInterval(interval)
   }, [animate])
 
@@ -44,8 +41,8 @@ function Home() {
     <div className='landing'>
       <div className='l-block1 block-bg' data-bg='landing/new_landing.jpg'>
         <div className='l-block1__content'>
-          <div className='l-block1__description'>Онлайн замовлення</div>
-          <div className='l-block1__sub-description'>
+          <div className='l-block1__description show'>Онлайн замовлення</div>
+          <div className='l-block1__sub-description show'>
             Графік роботи: 11:00 - 23:00
           </div>
           <div className='l-block1__logo'>

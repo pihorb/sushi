@@ -3,7 +3,7 @@ export class Lazy {
     this.backgrounds = document.querySelectorAll('[data-bg], [data-image]')
     this.config = {
       root: null,
-      rootMargin: '400px',
+      rootMargin: '500px',
       threshold: 0,
     }
   }
@@ -16,9 +16,11 @@ export class Lazy {
     const $img = new Image()
     $img.src = root
     $img.onload = () => {
-      return background
-        ? (node.style.backgroundImage = `url(${$img.src})`)
-        : (node.src = $img.src)
+      if (background) {
+        node.style.backgroundImage = `url(${$img.src})`
+      }
+      node.src = $img.src
+      node.style.visibility = 'visible'
     }
   }
 

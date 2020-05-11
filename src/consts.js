@@ -63,3 +63,12 @@ export const promotions = [
     desc: '2019-09-19 20:10:32'
   },
 ]
+
+export const menu = {
+  rolls: 'Роли',
+  sets: 'Сети',
+  'oberayte-5-roliv-platit-za-4': 'Обирайте 5 ролів плтатіть за 4',
+  hunkans: 'Нігірі та гункани',
+  drinks: 'Напої',
+  other: 'Додатки',
+}

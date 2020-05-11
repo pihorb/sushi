@@ -3,6 +3,7 @@ import Nav from './components/nav-bar/nav-bar'
 import Footer from './components/footer/footer'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import AOS from 'aos'
+import Spinner from './components/spinner/spinner'
 
 const Home = lazy(() => import('./pages/home/home'))
 const Menu = lazy(() => import('./pages/menu/menu'))
@@ -16,13 +17,13 @@ function App() {
       duration: 1000,
       once: true,
     })
-  })
+  }, [])
 
   return (
     <div className='container'>
       <Router>
         <Nav />
-        <Suspense fallback={<div>asdfasdf</div>}>
+        <Suspense fallback={<Spinner />}>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/menu/:id' component={Menu} />

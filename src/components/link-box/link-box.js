@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
 function LinkBox(props) {
-
   const container = classNames({
     'link-container__info': true,
     'extra-height': props.subtitle,
@@ -16,7 +15,7 @@ function LinkBox(props) {
       data-testid='link-container'
       data-aos={props.aos}
       bg-img='true'
-      data-bg={ props.name ? `links/${props.name}.jpg` : 'rgba(0, 0, 0, 0.5)'}
+      data-bg={props.name ? `links/${props.name}.jpg` : 'rgba(0, 0, 0, 0.5)'}
     >
       <div className={container} data-testid='container-info'>
         <Link

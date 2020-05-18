@@ -1,9 +1,13 @@
 const serialize = require('../../middlewares/serialize')
 
 async function handler(req, res, next) {
-  req.db('products').select('id').then(d => console.log(d))
+  try {
+    const rolls = await req.db('rolls').select('*')
+
+    return { rolls }
+  } catch (error) {
+    console.log(error)
+  }
 }
 
-module.exports = [
-  serialize(handler)
-]
+module.exports = [serialize(handler)]

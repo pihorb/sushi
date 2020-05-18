@@ -1,0 +1,33 @@
+@import "../../sass/mixins.sass"
+
+.link-container
+  @include flex(center, flex-end, row)
+  width: 36rem
+  height: 36rem
+  margin: 2.5rem
+  border-radius: $margin
+  background-size: cover
+  background-repeat: no-repeat
+  position: relative
+  &:hover 
+    .link-container__info
+      transition: height .5s
+      align-items: center
+      height: 100%
+      border-radius: $margin
+    .link-container__subtitle
+      transition: display 2s
+      display: flex
+  &__info
+    @include flex(center, center, column)
+    text-align: center
+    background: rgba(0, 0, 0, 0.5)
+    width: 100%
+    box-sizing: border-box
+    height: 20%
+    border-bottom-left-radius: $margin
+    border-bottom-right-radius: $margin
+    font-weight: bold
+    text-transform: uppercase
+    font-size: 1.8rem
+    cursor: pointer

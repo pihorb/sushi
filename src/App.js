@@ -8,15 +8,11 @@ import Spinner from './components/spinner/spinner'
 const Home = lazy(() => import('./pages/home/home'))
 const Menu = lazy(() => import('./pages/menu/menu'))
 const Delivery = lazy(() => import('./pages/delivery/delivery'))
-const Contacts = lazy(() => './pages/contacts/contacts')
+const Contacts = lazy(() => import('./pages/contacts/contacts.js'))
 
 function App() {
   useEffect(() => {
-    AOS.init({
-      offset: 0,
-      duration: 1000,
-      once: true,
-    })
+    AOS.init({ offset: 0, duration: 1000, once: true })
   }, [])
 
   return (

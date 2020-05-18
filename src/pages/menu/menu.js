@@ -1,18 +1,22 @@
-import React, { Fragment } from 'react'
-import './menu.sass'
+import React from 'react'
 import { useParams } from 'react-router-dom'
-import Icon from '../../components/icon/icon'
+import './menu.sass'
 import { menu } from '../../consts'
+import MenuSubList from '../../components/menu-sub-list/menu-sub-list'
+import HomeFoodList from '../../components/home-food-list/home-food-list'
 
 function Menu() {
   const { id: order } = useParams()
   const title = menu[order]
-  const img = require(`../../images/menu/${order}.jpg`)
-  const bg = `url(${img})`
+
+  const setBackground = () => {
+    const img = require(`../../images/menu/${order}.jpg`)
+    return `url(${img})`
+  }
 
   return (
     <div className='menu'>
-      <div className='m-header' style={{backgroundImage: bg}}>
+      <div className='m-header' style={{ backgroundImage: setBackground() }}>
         <div className='m-header__title'>{title}</div>
         <ul className='m-header__list'>
           <li className='m-header__item'>Головна</li>
@@ -24,16 +28,14 @@ function Menu() {
       <div className='m-divider'>
         <div className='m-divider__content'>
           <ul className='m-divider__list'>
-            {menu &&
-              Object.values(menu).map((value, i) => {
-                return (
-                  <Fragment key={i}>
-                    <li className='m-divider__item'>{value}</li>
-                    <Icon name='star' />
-                  </Fragment>
-                )
-              })}
+            <MenuSubList />
           </ul>
+        </div>
+      </div>
+
+      <div className='m-food'>
+        <div className='m-food__content'>
+          <HomeFoodList />
         </div>
       </div>
     </div>

@@ -14,7 +14,6 @@ function LinkBox(props) {
       className='link-container'
       data-testid='link-container'
       data-aos={props.aos}
-      bg-img='true'
       data-bg={props.name ? `links/${props.name}.jpg` : 'rgba(0, 0, 0, 0.5)'}
     >
       <div className={container} data-testid='container-info'>

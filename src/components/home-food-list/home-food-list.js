@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react'
-import DishInfoBox from '../dish-info-box/dish-info-box'
+import HomeInfoBox from '../home-info-box/home-info-box'
 import { Lazy } from '../../helpers'
 
 export default function HomeFoodList() {
@@ -24,7 +24,7 @@ export default function HomeFoodList() {
         menuList.map((item, index) => {
           return (
             <div className='m-food__item' key={index}>
-              <DishInfoBox info={item} />
+              <HomeInfoBox info={item} />
             </div>
           )
         })}

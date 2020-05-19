@@ -15,9 +15,10 @@
       align-items: center
       height: 100%
       border-radius: $margin
-    .link-container__subtitle
-      transition: display 2s
-      display: flex
+    .link-container__btns
+      opacity: 1
+      position: relative
+
   &__info
     @include flex(center, center, column)
     text-align: center
@@ -30,4 +31,19 @@
     font-weight: bold
     text-transform: uppercase
     font-size: 1.8rem
-    cursor: pointer
+    transition: all .3s ease-out
+
+  &__btns
+    opacity: 0
+    position: absolute
+    button
+      border: 1px solid red 
+      border-radius: 6px
+      padding: $padding 2.5rem
+      margin: $margin
+      background: transparent
+      color: #af0808
+      cursor: pointer
+      &:hover
+        color: white
+        background: #af0808

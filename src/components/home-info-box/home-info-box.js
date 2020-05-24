@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { createRef, useState, useEffect } from 'react'
 import './home-info-box.sass'
-import modal from '../modal/modal'
+import Modal from '../modal/modal'
 import Button from '../button/button'
 import MenuPlateInfo from '../menu-plate-info/menu-plate-info'
 
 export default function HomeInfoBox({ info }) {
-  const [open, setOpen] = useState(false)
+  const modal = createRef()
 
   const setBackground = () => {
     const name = info.name.replace(/\s/gi, '_')
@@ -13,17 +13,18 @@ export default function HomeInfoBox({ info }) {
   }
 
   const openModal = () => {
-    setOpen(!open)
+    const { current } = modal
+    current.toggleModal()
   }
-
-  const Component = modal(MenuPlateInfo)
 
   return (
     <div className='link-container' data-bg={setBackground()}>
       <div className='link-container__info'>
         {info.name} <br />
-        {info.price} ГРН.
-        {open && <Component />}
+        {info.price} ГРН. <br />
+        <Modal ref={modal}>
+          <MenuPlateInfo />
+        </Modal>
         <div className='link-container__btns'>
           <Button
             className='link-container__btn'

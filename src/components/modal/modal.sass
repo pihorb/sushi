@@ -1,7 +1,12 @@
+@import "../../sass/mixins.sass"
+
 .modal-wrap
   display: none
+
 .m-open
-  display: block
+  display: flex
+  padding-top: 10rem
+  justify-content: center
   position: fixed
   min-height: 100%
   max-height: 100%
@@ -12,3 +17,6 @@
   top: 0
   left: 0
 
+.m-content
+  display: block
+  max-width: 100rem

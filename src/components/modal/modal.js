@@ -1,33 +1,32 @@
-import React, { useState, useImperativeHandle, useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
+import ReactDOM from 'react-dom'
+import classNames from 'classnames'
 import './modal.sass'
 
-const Modal = React.forwardRef((props, ref) => {
-  const [ open, setOpen ] = useState(false)
-  const modal = useRef()
+export default function Modal(props) {
+  useEffect(() => {
+    const node = document.getElementById('modal-root')
+    ReactDOM.render(<ModalBox {...props} />, node)
+  }, [props])
 
-  useImperativeHandle(ref, () => ({
-    toggleModal: () => setOpen(!open),
-  }))
+  return <script />
+}
 
-  const toggle = () => ref.current.toggleModal()
+function ModalBox({ component, open }) {
+  const styles = classNames({
+    'modal-wrap': true,
+    'm-open': open,
+  })
 
   useEffect(() => {
-    const { current } = modal
-    if(open) {
-      current.classList.add('m-open')
-      document.body.classList.add('overflow')
-    } else {
-      current.classList.remove('m-open')
-      document.body.classList.remove('overflow')
-    }
+    document.body.style.overflow = open ? 'hidden' : 'auto'
   }, [open])
 
   return (
-    <div className='modal-wrap' ref={modal}>
-      <h1 onClick={toggle}> Close</h1>
-      {props.children}
+    <div className={styles}>
+      <div className='m-content'>
+        {component}
+      </div>
     </div>
   )
-})
-
-export default Modal
+}

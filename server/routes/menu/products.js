@@ -3,8 +3,8 @@ const serialize = require('../../middlewares/serialize')
 async function handler(req, res, next) {
   try {
 
-    const rolls = await req.db('rolls').select('*')
-    return { rolls }
+    const products = await req.db('products').select('*')
+    return { products }
   
   } catch (error) {
     console.log(error)

@@ -8,7 +8,9 @@ import Spinner from './components/spinner/spinner'
 const Home = lazy(() => import('./pages/home/home'))
 const Menu = lazy(() => import('./pages/menu/menu'))
 const Delivery = lazy(() => import('./pages/delivery/delivery'))
-const Contacts = lazy(() => import('./pages/contacts/contacts.js'))
+const Contacts = lazy(() => import('./pages/contacts/contacts'))
+const Create = lazy(() => import('./pages/create/create'))
+
 
 function App() {
   useEffect(() => {
@@ -25,6 +27,7 @@ function App() {
             <Route path='/menu/:id' component={Menu} />
             <Route path='/delivery' component={Delivery} />
             <Route path='/contacts' component={Contacts} />
+            <Route path='/create' component={Create} />
           </Switch>
         </Suspense>
         <Footer />
